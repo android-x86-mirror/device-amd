@@ -1,0 +1,12 @@
+on boot
+    chown system system /sys/class/backlight/acpi_video0/brightness
+
+    setprop rild.libpath /system/lib/libreference-ril.so
+    setprop rild.libargs "-d /dev/ttyUSB0"
+
+service userinit /system/bin/sh /system/etc/init.sh
+    oneshot
+    disabled
+
+on property:dev.bootcomplete=1
+    start userinit

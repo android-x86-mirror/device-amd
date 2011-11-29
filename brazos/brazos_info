@@ -1,0 +1,28 @@
+DMIPATH=/sys/class/dmi/id
+
+brazos_info()
+{
+	board=`cat $DMIPATH/product_name`
+	case "$board" in
+		*)
+			EXTMOD="$EXTMOD hid-multitouch"
+			;;
+	esac
+
+	return 1 # auto_detect
+}
+
+detect_hardware()
+{
+	case "`cat $DMIPATH/uevent`" in
+		*AMDCorporation*)
+			brazos_info
+			;;
+		*MSI*)
+			brazos_info
+			;;
+		*)
+			brazos_info
+			;;
+	esac
+}
