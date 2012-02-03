@@ -6,10 +6,3 @@ on boot
 
     setkeycode 0xe025 172
     setkeycode 0xe027 1
-
-service userinit /system/bin/sh /system/etc/init.sh
-    oneshot
-    disabled
-
-on property:dev.bootcomplete=1
-    start userinit
