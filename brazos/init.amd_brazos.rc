@@ -4,3 +4,12 @@ on boot
 
     setkeycode 0xe025 172
     setkeycode 0xe027 1
+    setkeycode 0xe05b 172
+    setkeycode 0xe05e 116
+    setkeycode 0xe0de 142
+    setkeycode 0x5b   103
+    setkeycode 0x62   29
+    setkeycode 0x6d   105
+    setkeycode 0x73   106
+    setkeycode 0x74   56
+    setkeycode 0x7b   108

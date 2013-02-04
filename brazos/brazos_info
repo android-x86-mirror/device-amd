@@ -4,11 +4,14 @@ brazos_info()
 {
 	board=`cat $DMIPATH/product_name`
 	case "$board" in
+		Inagua)
+			echo 'hal.sensors.kbd.type=2' >> default.prop
+			;;
 		*)
-			EXTMOD="$EXTMOD hid-multitouch"
 			;;
 	esac
 
+	EXTMOD="$EXTMOD ath3k uvcvideo hid-multitouch"
 	return 1 # auto_detect
 }
 
